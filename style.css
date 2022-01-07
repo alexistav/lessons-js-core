@@ -34,14 +34,38 @@ html {
 }
 .avatar__picture {
 	border-radius: 50%;
-	border: 2rem solid #fff;
-	webkit-transition: -webkit-transform .10s ease-in-out;
-        transition: transform 10s ease-in-out;;
+	border: 2rem solid #FFF;
+	webkit-transition: -webkit-transform 10s ease-in-out;
+        transition: transform 10s ease-in-out;
 }
 img:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+	webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+	animation-name: flash_border;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
+@keyframes flash_border {
+  0% {
+    border-color: blue;
+  }
+ 25% {
+    border-color: green;
+  }
+  50% {
+    border-color: yellow;
+  }
+  75% {
+    border-color: red;
+  }
+  100% {
+    border-color: blue;
+  }
+}
+	/*border-image: linear-gradient(blue, green, yellow, red);
+	border-image-slice: 1;
+}*/
 .contacts {
 	justify-content: center;
 	vertical-align: middle;
